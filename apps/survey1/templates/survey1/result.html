@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'survey1/styles.css' %}" media="screen" title="no title"  charset="utf-8">
+        <title>Dojo Survey (Django)</title>
+</head>
+<body>
+    <div class='box'>
+        <p>Thank you for submitting this form {{request.session.count}} time(s)!</p>
+            <div id='submittedInfo'>
+                <h3>Submitted Info</h3>
+                <h2>Name: {{request.session.name}}</h2><br>
+                <h2>Dojo Location: {{request.session.location}}</h2><br>
+                <h2>Favorite Language: {{request.session.language}}</h2><br>
+                <h2>Comment: {{request.session.comment}}</h2>
+            </div>
+        
+        <button type="button"><a href="/">Go back</a></button>
+    </div>
+</body>
+</html>
